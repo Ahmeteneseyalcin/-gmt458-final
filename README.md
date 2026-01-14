@@ -87,11 +87,11 @@ This project successfully implements the following modules selected from the fin
 ## 📸 Project Screenshots
 
 ### 1. Interactive Web Map (Frontend)
-*(Please insert a screenshot of your map here: `http://127.0.0.1:8000/`)*
+
 ![Map Interface](https://via.placeholder.com/800x400?text=Insert+Map+Screenshot+Here)
 
 ### 2. API Documentation (Swagger)
-*(Please insert a screenshot of Swagger UI here: `http://127.0.0.1:8000/swagger/`)*
+
 ![Swagger UI](https://via.placeholder.com/800x400?text=Insert+Swagger+Screenshot+Here)
 
 ---
@@ -137,5 +137,4 @@ This project successfully implements the following modules selected from the fin
     ```bash
     python manage.py runserver
     ```
-    * **Map:** `http://127.0.0.1:8000/`
-    * **API:** `http://127.0.0.1:8000/swagger/`
+
