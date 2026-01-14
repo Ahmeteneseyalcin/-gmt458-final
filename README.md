@@ -1,4 +1,4 @@
-# 📍 UniVibe - Campus Spot Discovery & Rating System
+#  UniVibe - Study Spot Discovery & Rating System
 ### GMT 458 - Web GIS Final Assignment
 **Student:** Ahmet Enes YALÇIN
 
