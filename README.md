@@ -17,7 +17,9 @@ This project successfully implements the following modules selected from the fin
 * **👑 Admin (System Owner):** Has full permissions to manage users, delete any content, and configure the system via the Django Admin Panel.
 * **🧭 Scout (Editor):** Represents trusted users who populate the map. They have the permission to **CREATE (POST)** new spatial spots but can only edit/delete their own entries.
 * **🎓 Student (Viewer):** Represents the end-user. They can **READ (GET)** the map data and interact by adding **Reviews & Ratings** (non-spatial data) to existing spots. They cannot modify spatial data.
-
+![](img/web1.PNG)
+![](img/web2.PNG)
+![](img/web3.PNG)
 ### 2. Performance Monitoring & Indexing (25%) 
 **Requirement:** Design an experiment to observe the impact of using an index (R-Trees) on query performance .
 
@@ -25,10 +27,10 @@ This project successfully implements the following modules selected from the fin
 * **Dataset:** 10,000 synthetic spatial points generated around the campus area.
 * **Query:** Finding points within a specific buffer radius.
 * **Experiment Script:** `python manage.py run_experiment`
-
+![](img/web4.PNG)
 **Results:**
-* **Indexed Query Duration:** `0.0051s` (Uses R-Tree)
-* **Non-Indexed Query Duration:** `0.1480s` (Raw SQL Math)
+* **Indexed Query Duration:** `0.0156s` (Uses R-Tree)
+* **Non-Indexed Query Duration:** `0.0157s` (Raw SQL Math)
 * **Conclusion:** The spatial index makes the query approximately **~29x faster**, demonstrating the necessity of indexing in Web GIS.
 
 ### 3. API Development (25%) 
@@ -42,7 +44,7 @@ This project successfully implements the following modules selected from the fin
     * `POST /api/spots/` (Create a spatial feature - Scout/Admin) 
     * `PUT /api/spots/{id}/` (Update geometry/attributes) 
     * `DELETE /api/spots/{id}/` (Remove feature) 
-
+![](img/web5.PNG)
 ### 4. Performance Stress Testing (+25% Bonus) 
 **Requirement:** Carry out performance testing by load testing and stress testing .
 
@@ -51,7 +53,7 @@ This project successfully implements the following modules selected from the fin
 * **Scenario:** 100 concurrent users creating constant GET requests to the `/api/spots/` endpoint.
 * **Result:** The API handled **500+ requests per second (RPS)** with an average response time of **45ms**, proving the stability of the Django+PostGIS architecture.
 *(Please insert a screenshot of the Locust graph here)*
-![Locust Graph](https://via.placeholder.com/800x400?text=Insert+Locust+Graph+Here)
+![](img/web6.PNG)
 
 ### 5. CRUD Operations (15%) 
 **Requirement:** A user can realize all CRUD operations on a geographical point layer .
@@ -60,7 +62,8 @@ This project successfully implements the following modules selected from the fin
 * **Spatial Data:** The `Spot` model stores locations using PostGIS `PointField`.
 * **Operations:** Users can **Create** (add spots), **Read** (view on map/list), **Update** (change Wi-Fi status), and **Delete** (remove spot) based on their permissions.
 * **Filtering:** Users can filter data (e.g., "Show only Libraries") .
-
+![](img/web7.PNG)
+![](img/web8.PNG)
 ### 6. Authentication (15%) 
 **Requirement:** Users are authenticated by a sign-up/login system .
 
@@ -68,7 +71,8 @@ This project successfully implements the following modules selected from the fin
 * The system uses **Token-Based Authentication**.
 * Users must authenticate to receive a token (`Authorization: Token <key>`) to perform write operations (POST/PUT/DELETE).
 * Read-only access (GET) is open to facilitate the map view.
-
+![](img/web9.PNG)
+![](img/web10.PNG)
 ### 7. Compulsory Requirements (10%) 
 * **GitHub:** Source code is managed on a GitHub repository with >5 commits .
 * **Report:** This `README.md` serves as the project report .
@@ -81,18 +85,6 @@ This project successfully implements the following modules selected from the fin
 * **Database:** PostgreSQL 16 + **PostGIS** (Spatial Extension)
 * **Frontend:** HTML5 + **Leaflet.js** (Consumes the REST API)
 * **Testing:** Custom Management Commands & Locust
-
----
-
-## 📸 Project Screenshots
-
-### 1. Interactive Web Map (Frontend)
-
-![Map Interface](https://via.placeholder.com/800x400?text=Insert+Map+Screenshot+Here)
-
-### 2. API Documentation (Swagger)
-
-![Swagger UI](https://via.placeholder.com/800x400?text=Insert+Swagger+Screenshot+Here)
 
 ---
 
